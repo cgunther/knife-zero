@@ -15,9 +15,9 @@ class Chef
         if config[:client_version]
           case config[:alter_project]
           when 'cinc'
-            super(%{/opt/cinc/embedded/bin/ruby -ropen-uri -e 'puts open("https://omnitruck.cinc.sh/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
+            super(%{/opt/cinc/embedded/bin/ruby -ropen-uri -e 'puts URI.open("https://omnitruck.cinc.sh/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
           else
-            super(%{/opt/chef/embedded/bin/ruby -ropen-uri -e 'puts open("https://omnitruck.chef.io/chef/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
+            super(%{/opt/chef/embedded/bin/ruby -ropen-uri -e 'puts URI.open("https://omnitruck.chef.io/chef/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
           end
         end
 
@@ -47,9 +47,9 @@ class Chef
         if config[:client_version]
           case config[:alter_project]
           when 'cinc'
-            super(%{/opt/cinc/embedded/bin/ruby -ropen-uri -e 'puts open("https://omnitruck.cinc.sh/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
+            super(%{/opt/cinc/embedded/bin/ruby -ropen-uri -e 'puts URI.open("https://omnitruck.cinc.sh/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
           else
-            super(%{/opt/chef/embedded/bin/ruby -ropen-uri -e 'puts open("https://omnitruck.chef.io/chef/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
+            super(%{/opt/chef/embedded/bin/ruby -ropen-uri -e 'puts URI.open("https://omnitruck.chef.io/chef/install.sh").read' | sudo sh -s -- -v #{config[:client_version]}})
           end
         end
 

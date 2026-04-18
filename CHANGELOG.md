@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Fix applying client_version to be compatible with Ruby 3 XXX HT [@cgunther](https://github.com/cgunther)
 
 ## v2.6.0
 
